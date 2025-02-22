@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Shared/Navbar.astro";
+import Hero from "../components/Shared/Hero";
+import Stats from "../components/About/Stats.astro";
+import Team from "../components/About/Team.astro";
+import Values from "../components/About/Values.astro";
+import Footer from "../components/Shared/Footer.astro";
+import "../../public/css/index.css";
+---
+
+<Layout>
+  <Navbar />
+  <Hero
+    span="Nosotros"
+    title="Nuestra Historia y Misión"
+    description="Construyendo el futuro de las telecomunicaciones desde ayer :)"
+  />
+  <Stats />
+  <Team />
+  <Values />
+  <Footer />
+</Layout>

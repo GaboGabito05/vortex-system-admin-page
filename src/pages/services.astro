@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Shared/Navbar.astro";
+import Hero from "../components/Shared/Hero";
+import ServicesComponent from "../components/Services/Services.astro";
+import Process from "../components/Services/Process.astro";
+import Footer from "../components/Shared/Footer.astro";
+import "../../public/css/index.css";
+---
+
+<Layout>
+  <Navbar />
+  <Hero
+    span="Servicios"
+    title="Soluciones Expertas para el Crecimiento de tu Negocio"
+    description="Ofrecemos servicios integrales para ayudarte a prosperar en el competitivo mercado actual."
+  />
+  <ServicesComponent />
+  <Process />
+  <Footer />
+</Layout>
