@@ -49,3 +49,7 @@ Este proyecto es una landing page para **Vortex Telecommunications**, una empres
    ```bash
    git commit -m "Descripcion de cambios"
    ```
+3. Hacer el push:
+   ```bash
+   git push -u origin master
+   ```
