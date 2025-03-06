@@ -1,5 +1,7 @@
 # Vortex Telecommunications Landing Page
 
+![App Screenshot](https://i.imgur.com/FjNgzF4.png)
+
 ## 📌 Descripción
 Este proyecto es una landing page para **Vortex Telecommunications**, una empresa que ofrece servicios de telecomunicaciones. Está construido con **Astro** y **React**, utilizando **CSS y JavaScript** para personalización y funcionalidades interactivas.
 
