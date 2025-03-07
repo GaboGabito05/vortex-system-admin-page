@@ -1,3 +1,25 @@
+---
+const data = [
+  {
+    name: 'Douglas Morean',
+    role: 'Software Developer',
+    linkedin: 'https://www.linkedin.com/in/douglasmorean/',
+    github: '#'
+  },
+  {
+    name: 'Eduardo Requejo',
+    role: 'Software Developer',
+    linkedin: 'https://www.linkedin.com/in/felix-eduardo-requejo-yliquin-43647526a/"',
+    github: '#'
+  },
+  {
+    name: 'Aimar de la Cruz',
+    role: 'Software Developer',
+    linkedin: 'https://www.linkedin.com/in/aimar-de-la-cruz-89ab432a4/',
+    github: '#'
+  }
+]
+---
 <section class="team">
   <div class="container">
     <div class="section-header text-center">
@@ -5,41 +27,19 @@
       <p>Los visionarios que impulsan la innovación en telecomunicaciones</p>
     </div>
     <div class="team-grid">
-      <div class="team-member">
-        <div class="member-photo">
-          <div class="photo-placeholder"></div>
+      {data.map((member) => (
+        <div class="team-member">
+          <div class="member-photo">
+            <div class="photo-placeholder"></div>
+          </div>
+          <h3>{member.name}</h3>
+          <p>{member.role}</p>
+          <div class="social-links">
+            <a href={member.linkedin} class="social-link">LinkedIn</a>
+            <a href={member.github} class="social-link">GitHub</a>
+          </div>
         </div>
-        <h3>Douglas Morean</h3>
-        <p>Software Developer</p>
-        <div class="social-links">
-          <a href="#" class="social-link">LinkedIn</a>
-          <a href="#" class="social-link">GitHub</a>
-        </div>
-      </div>
-
-      <div class="team-member">
-        <div class="member-photo">
-          <div class="photo-placeholder"></div>
-        </div>
-        <h3>Eduardo Requejo</h3>
-        <p>Software Developer</p>
-        <div class="social-links">
-          <a href="#" class="social-link">LinkedIn</a>
-          <a href="#" class="social-link">GitHub</a>
-        </div>
-      </div>
-
-      <div class="team-member">
-        <div class="member-photo">
-          <div class="photo-placeholder"></div>
-        </div>
-        <h3>Aimar de la Cruz</h3>
-        <p>Software Developer</p>
-        <div class="social-links">
-          <a href="#" class="social-link">LinkedIn</a>
-          <a href="#" class="social-link">GitHub</a>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>

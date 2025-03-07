@@ -1,3 +1,23 @@
+---
+const testimonials = [
+  {
+    text: "Trabajar con Vortex ha sido un cambio radical para nuestro negocio. Su internet de alta velocidad y soporte técnico han sido clave para nuestro crecimiento.",
+    name: "María González",
+    position: "Gerente @ Innovatech"
+  },
+  {
+    text: "Vortex ha superado todas nuestras expectativas. Sus soluciones en la nube han optimizado nuestras operaciones y mejorado nuestra eficiencia.",
+    name: "Carlos Ramírez",
+    position: "Director @ CloudSolutions"
+  },
+  {
+    text: "Desde que implementamos las soluciones empresariales de Vortex, nuestra productividad ha aumentado significativamente. ¡Altamente recomendados!",
+    name: "Ana López",
+    position: "CEO @ NexoCorp"
+  }
+];
+---
+
 <section class="review">
   <div class="container">
     <div class="review-header">
@@ -5,36 +25,18 @@
     </div>
     <div class="review-carousel">
       <div class="review-cards">
-        <div class="review-card">
-          <p>"Trabajar con Vortex ha sido un cambio radical para nuestro negocio. Su internet de alta velocidad y soporte técnico han sido clave para nuestro crecimiento."</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar"></div>
-            <div class="reviewer-info">
-              <h4>María González</h4>
-              <p>Gerente @ Innovatech</p>
+        {testimonials.map((testimonial) => (
+          <div class="review-card">
+            <p>"{testimonial.text}"</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar"></div>
+              <div class="reviewer-info">
+                <h4>{testimonial.name}</h4>
+                <p>{testimonial.position}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="review-card">
-          <p>"Vortex ha superado todas nuestras expectativas. Sus soluciones en la nube han optimizado nuestras operaciones y mejorado nuestra eficiencia."</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar"></div>
-            <div class="reviewer-info">
-              <h4>Carlos Ramírez</h4>
-              <p>Director @ CloudSolutions</p>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <p>"Desde que implementamos las soluciones empresariales de Vortex, nuestra productividad ha aumentado significativamente. ¡Altamente recomendados!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar"></div>
-            <div class="reviewer-info">
-              <h4>Ana López</h4>
-              <p>CEO @ NexoCorp</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
       <div class="carousel-controls">
         <button class="prev">←</button>

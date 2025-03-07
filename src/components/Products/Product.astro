@@ -1,55 +1,66 @@
 ---
-import IconAnalytics from "../../icons/IconAnalytics.astro"
-import IconCRM from "../../icons/IconCRM.astro"
-import IconProject from "../../icons/IconProject.astro"
+import IconAnalytics from "../../icons/IconAnalytics.astro";
+import IconCRM from "../../icons/IconCRM.astro";
+import IconProject from "../../icons/IconProject.astro";
+
+const products = [
+  {
+    icon: IconAnalytics,
+    title: "Internet de Alta Velocidad",
+    description: "Conexiones rápidas y confiables para hogares y negocios, con soporte técnico 24/7.",
+    features: [
+      "Velocidades de hasta 1 Gbps",
+      "Baja latencia",
+      "Cobertura en áreas urbanas y rurales"
+    ],
+    buttonText: "Más Información",
+    buttonClass: "btn-primary"
+  },
+  {
+    icon: IconCRM,
+    title: "Servicios en la Nube",
+    description: "Almacenamiento seguro y escalable para tus datos, accesible desde cualquier dispositivo.",
+    features: [
+      "Almacenamiento ilimitado",
+      "Copias de seguridad automáticas",
+      "Cifrado de extremo a extremo"
+    ],
+    buttonText: "Más Información",
+    buttonClass: "btn-primary"
+  },
+  {
+    icon: IconProject,
+    title: "Soluciones Empresariales",
+    description: "Conectividad dedicada y herramientas diseñadas para maximizar la productividad de tu negocio.",
+    features: [
+      "Telefonía IP y videoconferencias",
+      "Redes privadas virtuales (VPN)",
+      "Soporte personalizado"
+    ],
+    buttonText: "Más Información",
+    buttonClass: "btn-primary"
+  }
+];
 ---
 
 <section class="product-grid">
   <div class="container">
     <div class="products-wrapper">
-      <div class="product-card">
-        <div class="product-icon">
-          <IconAnalytics />
+      {products.map((product) => (
+        <div class="product-card">
+          <div class="product-icon">
+            <product.icon />
+          </div>
+          <h3>{product.title}</h3>
+          <p>{product.description}</p>
+          <ul class="feature-list">
+            {product.features.map((feature) => (
+              <li>{feature}</li>
+            ))}
+          </ul>
+          <button class={`btn ${product.buttonClass}`}>{product.buttonText}</button>
         </div>
-        <h3>Internet de Alta Velocidad</h3>
-        <p>
-          Conexiones rápidas y confiables para hogares y negocios, con soporte técnico 24/7.
-        </p>
-        <ul class="feature-list">
-          <li>Velocidades de hasta 1 Gbps</li>
-          <li>Baja latencia</li>
-          <li>Cobertura en áreas urbanas y rurales</li>
-        </ul>
-        <button class="btn btn-primary">Más Información</button>
-      </div>
-
-      <div class="product-card">
-        <div class="product-icon">
-          <IconCRM />
-        </div>
-        <h3>Servicios en la Nube</h3>
-        <p>Almacenamiento seguro y escalable para tus datos, accesible desde cualquier dispositivo.</p>
-        <ul class="feature-list">
-          <li>Almacenamiento ilimitado</li>
-          <li>Copias de seguridad automáticas</li>
-          <li>Cifrado de extremo a extremo</li>
-        </ul>
-        <button class="btn btn-primary">Más Información</button>
-      </div>
-
-      <div class="product-card">
-        <div class="product-icon">
-          <IconProject />
-        </div>
-        <h3>Soluciones Empresariales</h3>
-        <p>Conectividad dedicada y herramientas diseñadas para maximizar la productividad de tu negocio.</p>
-        <ul class="feature-list">
-          <li>Telefonía IP y videoconferencias</li>
-          <li>Redes privadas virtuales (VPN)</li>
-          <li>Soporte personalizado</li>
-        </ul>
-        <button class="btn btn-primary">Más Información</button>
-      </div>
+      ))}
     </div>
   </div>
 </section>

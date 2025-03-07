@@ -335,7 +335,7 @@ const modalSystem = {
           </div>
           <div class="modal-content">
             <p>${info.description}</p>
-            <h4>Key Features:</h4>
+            <h4>Caracteristicas:</h4>
             <ul class="modal-features">
               ${info.features.map((feature) => `<li>${feature}</li>`).join("")}
             </ul>

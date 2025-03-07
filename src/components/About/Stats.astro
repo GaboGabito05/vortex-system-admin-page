@@ -1,22 +1,33 @@
+---
+const data = [
+  {
+    number: 120,
+    label: 'Expertos en Telecomunicaciones'
+  },
+  {
+    number: 10000,
+    label: 'Clientes Satisfechos'
+  },
+  {
+    number: 50,
+    label: 'Países con Cobertura'
+  },
+  {
+    number: 15,
+    label: 'Años de Innovación Conectando al Mundo'
+  }
+]
+---
+
 <section class="company-stats">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">120</div>
-        <div class="stat-label">Expertos en Telecomunicaciones</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">10,000</div>
-        <div class="stat-label">Clientes Satisfechos</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">50</div>
-        <div class="stat-label">Países con Cobertura</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">15</div>
-        <div class="stat-label">Años de Innovación Conectando al Mundo</div>
-      </div>
+      {data.map((stat) => (
+        <div class="stat">
+          <div class="stat-number">{stat.number.toLocaleString()}</div>
+          <div class="stat-label">{stat.label}</div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

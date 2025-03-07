@@ -2,8 +2,25 @@
 import IconHeart from "../../icons/IconHeart.astro";
 import IconUser from "../../icons/IconUser.astro";
 import IconGlobal from "../../icons/IconGlobal.astro";
----
 
+const data = [
+  {
+    icon: IconHeart,
+    title: "Innovación",
+    description: "Lideramos el camino en tecnología de telecomunicaciones, siempre buscando soluciones innovadoras para conectar al mundo."
+  },
+  {
+    icon: IconUser,
+    title: "Enfoque en el Cliente",
+    description: "Nuestros clientes son nuestra prioridad. Nos esforzamos por ofrecer experiencias excepcionales y soluciones a medida."
+  },
+  {
+    icon: IconGlobal,
+    title: "Conectividad Global",
+    description: "Buscamos reducir las barreras de comunicación, llevando conectividad confiable a cada rincón del planeta."
+  }
+];
+---
 <section class="values">
   <div class="container">
     <div class="section-header text-center">
@@ -11,29 +28,15 @@ import IconGlobal from "../../icons/IconGlobal.astro";
       <p>Lo que nos impulsa hacia adelante</p>
     </div>
     <div class="values-grid">
-      <div class="value-card">
-        <div class="value-icon">
-          <IconHeart />
+      {data.map((value) => (
+        <div class="value-card">
+          <div class="value-icon">
+            <value.icon />
+          </div>
+          <h3>{value.title}</h3>
+          <p>{value.description}</p>
         </div>
-        <h3>Innovación</h3>
-        <p>Lideramos el camino en tecnología de telecomunicaciones, siempre buscando soluciones innovadoras para conectar al mundo.</p>
-      </div>
-
-      <div class="value-card">
-        <div class="value-icon">
-         <IconUser />
-        </div>
-        <h3>Enfoque en el Cliente</h3>
-        <p>Nuestros clientes son nuestra prioridad. Nos esforzamos por ofrecer experiencias excepcionales y soluciones a medida.</p>
-      </div>
-
-      <div class="value-card">
-        <div class="value-icon">
-          <IconGlobal />
-        </div>
-        <h3>Conectividad Global</h3>
-        <p>Buscamos reducir las barreras de comunicación, llevando conectividad confiable a cada rincón del planeta.</p>
-      </div>
+      ))}
     </div>
   </div>
 </section>

@@ -1,3 +1,28 @@
+---
+const processSteps = [
+  {
+    number: "1",
+    title: "Análisis",
+    description: "Comprendemos tus necesidades y objetivos"
+  },
+  {
+    number: "2",
+    title: "Diseño",
+    description: "Desarrollamos una solución personalizada"
+  },
+  {
+    number: "3",
+    title: "Implementación",
+    description: "Ejecutamos el plan de manera eficiente"
+  },
+  {
+    number: "4",
+    title: "Soporte Continuo",
+    description: "Mejora continua y asistencia técnica"
+  }
+];
+---
+
 <section class="process">
   <div class="container">
     <div class="section-header text-center">
@@ -5,26 +30,13 @@
       <p>Cómo entregamos soluciones de excelencia</p>
     </div>
     <div class="process-steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Análisis</h3>
-        <p>Comprendemos tus necesidades y objetivos</p>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>Diseño</h3>
-        <p>Desarrollamos una solución personalizada</p>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Implementación</h3>
-        <p>Ejecutamos el plan de manera eficiente</p>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <h3>Soporte Continuo</h3>
-        <p>Mejora continua y asistencia técnica</p>
-      </div>
+      {processSteps.map((step) => (
+        <div class="step">
+          <div class="step-number">{step.number}</div>
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+        </div>
+      ))}
     </div>
   </div>
 </section>

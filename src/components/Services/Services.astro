@@ -1,50 +1,58 @@
+---
+const services = [
+  {
+    icon: "https://i.imgur.com/iUPBvDA.jpeg",
+    title: "Internet de Alta Velocidad",
+    description: "Conexiones rápidas y confiables para hogares y negocios, con soporte técnico 24/7.",
+    features: [
+      "Velocidades de hasta 1 Gbps",
+      "Baja latencia",
+      "Cobertura en áreas urbanas y rurales",
+      "Soporte técnico dedicado"
+    ]
+  },
+  {
+    icon: "https://i.imgur.com/NQZP7Af.jpeg",
+    title: "Servicios en la Nube",
+    description: "Almacenamiento seguro y escalable para tus datos, accesible desde cualquier dispositivo.",
+    features: [
+      "Almacenamiento ilimitado",
+      "Copias de seguridad automáticas",
+      "Cifrado de extremo a extremo",
+      "Acceso remoto"
+    ]
+  },
+  {
+    icon: "https://i.imgur.com/KokxwsY.jpeg",
+    title: "Soluciones Empresariales",
+    description: "Conectividad dedicada y herramientas diseñadas para maximizar la productividad de tu negocio.",
+    features: [
+      "Telefonía IP y videoconferencias",
+      "Redes privadas virtuales (VPN)",
+      "Soporte personalizado",
+      "Soluciones escalables"
+    ]
+  }
+];
+---
+
 <section class="services-overview">
   <div class="container">
     <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">
-          <img src="https://i.imgur.com/iUPBvDA.jpeg" alt="icon">
+      {services.map((service) => (
+        <div class="service-card">
+          <div class="service-icon">
+            <img src={service.icon} alt="icon" />
+          </div>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <ul>
+            {service.features.map((feature) => (
+              <li>{feature}</li>
+            ))}
+          </ul>
         </div>
-        <h3>Internet de Alta Velocidad</h3>
-        <p>
-          Conexiones rápidas y confiables para hogares y negocios, con soporte técnico 24/7.        </p>
-        <ul>
-          <li>Velocidades de hasta 1 Gbps</li>
-          <li>Baja latencia</li>
-          <li>Cobertura en áreas urbanas y rurales</li>
-          <li>Soporte técnico dedicado</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <img src="https://i.imgur.com/NQZP7Af.jpeg" alt="icon">
-        </div>
-        <h3>Servicios en la Nube</h3>
-        <p>Almacenamiento seguro y escalable para tus datos, accesible desde cualquier dispositivo.</p>
-        <ul>
-          <li>Almacenamiento ilimitado</li>
-          <li>Copias de seguridad automáticas</li>
-          <li>Cifrado de extremo a extremo</li>
-          <li>Acceso remoto</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <img src="https://i.imgur.com/KokxwsY.jpeg" alt="icon">
-        </div>
-        <h3>Soluciones Empresariales</h3>
-        <p>
-          Conectividad dedicada y herramientas diseñadas para maximizar la productividad de tu negocio.
-        </p>
-        <ul>
-          <li>Telefonía IP y videoconferencias</li>
-          <li>Redes privadas virtuales (VPN)</li>
-          <li>Soporte personalizado</li>
-          <li>Soluciones escalables</li>
-        </ul>
-      </div>
+      ))}
     </div>
   </div>
 </section>
